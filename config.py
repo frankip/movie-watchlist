@@ -2,7 +2,8 @@ class Confifg:
     """
     common confugurations
     """
-    pass
+    MOVIE_API_KEY = '<Your Api Key>'
+    MOVIE_API_BASE_URL ='https://api.themoviedb.org/3/movie/{}?api_key={}'
 
 
 class DevelopmentConfig(Confifg):
