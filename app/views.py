@@ -1,7 +1,7 @@
 from flask import render_template
 from app import app 
 
-from .request import get_movies
+from .request import get_movies, get_single_movie,  search_movie
 
 # views
 @app.route('/')
@@ -22,4 +22,9 @@ def movie(movie_id):
     '''
     View movie page function that returns the movie details page and its data
     '''
-    return render_template('movie.html',id = movie_id)
+    movie = get_single_movie(movie_id)
+    title = f'{movie.title}'
+
+    return render_template('movie.html',title = title,movie = movie)
+
+
