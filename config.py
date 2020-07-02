@@ -14,8 +14,6 @@ class DevelopmentConfig(Confifg):
     """
 
     DEBUG = True
-
-
 class ProductionConfig(Confifg):
     """
     Production config
