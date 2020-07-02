@@ -48,13 +48,17 @@ def search(movie_name):
     '''
     movie_name_list = movie_name.split(" ")
     movie_name_format = "+".join(movie_name_list)
+    
     searched_movies = search_movie(movie_name_format)
-    # print('serached', searched_movies)
     title = f'search results for {movie_name}'
-    if searched_movies:
-        return redirect(url_for('search',movie_name=search_movie))
-    else:
-        return '<h3> There is is no movie found</h3>'
+
+    return render_template('search.html', movies= searched_movies)
+
+
+    # return redirect(url_for('search',movie_name=search_movie))
+    # if searched_movies:
+    # else:
+    #     return '<h3> There is is no movie found</h3>'
 
 
 @app.route('/movie/review/new/<int:movie_id>', methods=['GET', 'POST'])

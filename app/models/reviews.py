@@ -18,7 +18,6 @@ class Review:
 
     @classmethod
     def get_reviews(cls, id):
-        
         response = []
         for review in cls.all_reviews:
             # print(review.__dict__)
