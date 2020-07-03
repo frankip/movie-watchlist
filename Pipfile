@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 flask-bootstrap = "*"
 flask-wtf = "*"
+flask-script = "*"
 
 [requires]
 python_version = "2.7"
