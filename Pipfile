@@ -10,7 +10,7 @@ flask = "*"
 flask-bootstrap = "*"
 flask-wtf = "*"
 flask-script = "*"
-gunicorn = "*"
+gunicorn = "~=19.10"
 
 [requires]
 python_version = "2.7"
