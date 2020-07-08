@@ -1,12 +1,11 @@
 from flask import render_template,request,redirect,url_for
-# from app import app 
 from . import main
 from ..request import get_movies, get_single_movie,  search_movie
-
-# from modelsimport Review
 from ..models import Review
-# 
 from .form import ReviewForm
+
+from flask_login import login_required
+
 
 # views
 @main.route('/')
@@ -37,9 +36,6 @@ def movie(movie_id):
     title = f'{movie.title}'
 
     reviews = Review.get_reviews(movie.id)
-
-    print('------', reviews)
-
     return render_template('movie.html',title = title,movie = movie, reviews = reviews)
 
 
@@ -59,6 +55,7 @@ def search(movie_name):
 
 
 @main.route('/movie/review/new/<int:movie_id>', methods=['GET', 'POST'])
+@login_required
 def new_review(movie_id):
     form = ReviewForm()
     movie = get_single_movie(movie_id)
