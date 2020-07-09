@@ -10,6 +10,9 @@ flask = "*"
 flask-bootstrap = "*"
 flask-wtf = "*"
 flask-script = "*"
+flask-migrate = "*"
+flask-login = "*"
+email-validator = "*"
 
 [requires]
 python_version = "2.7"
