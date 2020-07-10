@@ -16,6 +16,7 @@ email-validator = "*"
 flask-uploads = "*"
 flask-simplemde = "*"
 markdown2 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "2.7"

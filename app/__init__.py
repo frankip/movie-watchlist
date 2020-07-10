@@ -9,7 +9,7 @@ from flask_mail import Mail
 
 
 # # intializing the app
-# 
+
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 photos = UploadSet('photos', IMAGES)
