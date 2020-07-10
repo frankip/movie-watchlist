@@ -10,6 +10,12 @@
         {% endif %}
     </head>
     <body>
+        {%block styles%}
+            {{super()}}
+            {{ simplemde.css }}
+            {{ simplemde.js }}
+
+        {% endblock %}
         {% block navbar %}
             {% include 'navbar.html' %}
         {% endblock %}

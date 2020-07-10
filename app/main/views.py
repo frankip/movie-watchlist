@@ -1,3 +1,4 @@
+import markdown2
 from flask import render_template,request,redirect,url_for,abort
 from . import main
 from ..request import get_movies, get_single_movie,  search_movie
@@ -78,6 +79,17 @@ def new_review(movie_id):
         
     title = f'{movie.title} review'
     return render_template('new_review.html',title = title, review_form=form, movie=movie)
+
+
+@main.route('/review/<int:id>')
+def get_single_review(id):
+    review = Review.query.get(id)
+    if review is None:
+        abort(404)
+    
+    format_review = markdown2.markdown(review.movie_review, extras=["code-friendly", "fenced-code-blocks"])
+    return render_template('review.html', review=review, format_review=format_review)
+
 
 
 @main.route('/user/<uname>')
